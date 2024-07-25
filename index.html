@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Web Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="styleSheet" href="CSSPortfolio.css">
+    <script src="JSPortfolio.js"></script>
+    <link rel="icon" type="image/jpg" href="./imgs/tabPicture.jpg">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo-holder">
+            <div class="logo">H</div>
+            <div class="logo-text">Henry's Portfolio</div>
+        </a>
+        <nav>
+            <ul id="menu">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#experience">Work Experience</a>
+                </li>
+                <li>
+                    <a href="mailto:henrykoehn1@gmail.com" class="button">Contact me</a>
+                </li>
+            </ul>
+            <a href="#" class="mobile-toggle"
+            onclick="toggleMobileMenu();">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10"/>
+                </svg>
+
+            </a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero container">
+            <div class="hero-blue">
+                <div>
+                    <h1><small>Hi I'm</small>
+                        Henry Koehn
+                    </h1>
+                    <p>
+                      I am a student at the University of Iowa pursuing a degree in Computer Science and Engineering. At Iowa, I am also a part of the Baja Club where I get to practice my engineering skills. <span> I am interested in web development, artificial intelligence, embedded software, and other related topics</span>
+                    </p>
+                    <div class="call-to-action">
+                        <a href="./Henry Koehn Resume.pdf" class="button black">
+                            View Resume
+                        </a>
+                        <a href="mailto:henrykoehn1@gmail.com" class="button white">
+                            Contact Me
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/henry-koehn-703395268/">
+                            <img src="./imgs/linkedin.png" alt="LinkedIn" width="48" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-yellow">
+                <img src="./imgs/file.png" alt="Henry Koehn" width= "1080" />
+            </div>
+        </section>
+        <section class="logos container">
+            <div class="track">
+                <img src="./imgs/html.png" alt="HTML" width="128"/>
+                <img src="./imgs/css.png" alt="CSS" width="128"/>
+                <img src="./imgs/javascript.png" alt="JavaScript" width="128"/>
+                <img src="./imgs/python.png" alt="Python" width="128"/>
+                <img src="./imgs/vscode.png" alt="VSCODE" width="128"/>
+            </div>
+        </section>
+        <section id = "skills" class="skills container">
+            <h2>
+                <small>About Me</small>
+                skills
+            </h2>
+            <div class="holder-blue">
+                <div class="left-column">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="right-column">
+                    <h3>A bit about me</h3>
+                    <p>Hi my name is Henry Koehn, and I am from Cedar Falls Iowa. I've always enjoyed working with computers and challenging myself. That's why I decided to choose computer science and engineering. This major allows me to combine the software aspect and the hardware aspect of computers.</p>
+                </div>
+            </div>
+        </section>
+        <section id = "experience" class = "work-experience container">
+            <h2>
+                <small>Recent</small>
+                Work Experience
+            </h2>
+            <div class = "jobs">
+                <article>
+                    <figure></figure>
+                    <h3>Cedar Falls Community School District</h3>
+                    <div>May 2024 - August 2024</div>
+                    <p>Cedar Falls Community School District ITS Internship - Helped develop new multi-million dollar high school IT infrastructure by installing 8 network switches and over 15 UPS' for the main and intermediate distribution frames in the new building. Also helped prepare and configure over 200  student and staff devices for upcoming school year </p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
