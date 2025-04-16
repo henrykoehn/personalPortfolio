@@ -17,6 +17,8 @@
     --blue-100: #e2f8ff;
     --blue-400: #61dafb;
     --blue-800: #0a61ae;
+    --green: #229954;
+    --yellow-200: #f7dc6f;
 }
 
 
@@ -193,7 +195,7 @@ h1{
     }
     .hero-blue{
         flex:1;
-        background-color: var(--blue-100);
+        background-color: var(--yellow-400);
         border-radius:30px;
         padding: 10px 30px;
         display:flex;
@@ -220,17 +222,51 @@ h1{
             }
         }
     }
-    .hero-yellow{
-        flex:1;
-        background-color: var(--yellow);
-        border-radius:30px;
-        padding:-10px 30px;
-        display:flex;
-        justify-content:center;
-        align-items:flex-end;
-        img{
-            margin-top:-120px;
-            max-width:420px;
+    .hero-yellow {
+        flex: 1;
+        background-color: var(--green);
+        border-radius: 30px;
+        padding: 30px; /* Uniform padding */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden; /* Ensure image stays contained */
+        position: relative;
+
+        img {
+            width: 100%; /* Fill container width */
+            max-width: 420px; /* Maximum size */
+            height: auto; /* Maintain aspect ratio */
+            border: 12px solid var(--green); /* Green border */
+            border-radius: 20px; /* Slightly smaller than container radius */
+            box-sizing: border-box; /* Include border in width calculation */
+            object-fit: contain;
+            position: relative;
+            z-index: 1; /* Ensure border stays on top */
+
+            /* Remove negative margin if exists */
+            margin-top: 0;
+
+            /* Optional shadow for depth */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+        @media (max-width: 1024px) {
+            padding: 20px;
+
+            img {
+                max-width: 80%;
+                border-width: 8px;
+            }
+
+            &::before {
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+            }
         }
     }
 }
@@ -296,7 +332,7 @@ h3 {
 
 .skills {
     .holder-blue {
-        background-color: var(--blue-100);
+        background-color: var(--yellow-200);
         border-radius:30px;
         padding:30px;
         display:flex;
@@ -312,7 +348,7 @@ h3 {
                 margin-bottom:20px;
                 li {
                     display:inline-block;
-                    background-color: var(--blue-400);
+                    background-color: var(--base-100);
                     padding:10px 20px;
                     border-radius:15px;
                     margin-bottom:10px;
@@ -336,7 +372,7 @@ h3 {
             flex-direction:column;
         }
         article{
-            background-color: var(--yellow-100);
+            background-color: var(--base-100);
             padding: 30px;
             border-radius:30px;
             flex:1;
