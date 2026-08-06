@@ -2,121 +2,250 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio Web Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Koehn — Software Engineer</title>
+    <meta name="description" content="Henry Koehn — Software Engineer. University of Iowa CS&E student with production experience at Mastercard and Casey's, building across the full stack.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="styleSheet" href="CSSPortfolio.css">
-    <script src="JSPortfolio.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSSPortfolio.css">
+    <script src="JSPortfolio.js" defer></script>
     <link rel="icon" type="image/jpg" href="./imgs/tabPicture.jpg">
+    <script>
+        (function(){
+            var saved = localStorage.getItem('theme');
+            var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
 </head>
 <body>
     <header>
         <a href="#" class="logo-holder">
             <div class="logo">H</div>
-            <div class="logo-text">Henry's Portfolio</div>
+            <div class="logo-text">Henry Koehn</div>
         </a>
         <nav>
             <ul id="menu">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#skills">Skills</a>
-                </li>
-                <li>
-                    <a href="#experience">Work Experience</a>
-                </li>
-                <li>
-                    <a href="mailto:henrykoehn1@gmail.com" class="button">Contact me</a>
-                </li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="mailto:henrykoehn1@gmail.com" class="button">Contact</a></li>
             </ul>
-            <a href="#" class="mobile-toggle"
-            onclick="toggleMobileMenu();">
-                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <button class="theme-toggle" onclick="toggleTheme();" aria-label="Toggle dark mode">
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </button>
+            <a href="#" class="mobile-toggle" onclick="toggleMobileMenu();">
+                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h10"/>
                 </svg>
-
             </a>
         </nav>
     </header>
     <main>
         <section class="hero container">
-            <div class="hero-blue">
+            <div class="hero-blue reveal">
                 <div>
-                    <h1><small>Hi I'm</small>
+                    <p class="eyebrow">Software Engineer</p>
+                    <h1><small>Hi, I'm</small>
                         Henry Koehn
                     </h1>
                     <p>
-                      I am a student at the University of Iowa pursuing a degree in Computer Science and Engineering. At Iowa, I am also a part of the Hyperloop club where I get to practice my engineering skills. <span> I am interested in web development, artificial intelligence, embedded software, and other related topics</span>
+                      I'm a Computer Science & Engineering student at the University of Iowa looking to grow into a full-time Software Engineering role. I most recently built production systems and automation as an SRE intern at <span>Mastercard</span>, and before that shipped features on a live accounting platform at Casey's. I like working across the stack — backend services, cloud infrastructure, and the tooling that keeps it all running.
                     </p>
                     <div class="call-to-action">
-                        <a href="./Henry Koehn Resume.pdf" class="button black">
-                            View Resume
+                        <a href="./Henry_Koehn_Resume_SWE.pdf" class="button black" download>
+                            Resume
                         </a>
                         <a href="mailto:henrykoehn1@gmail.com" class="button white">
                             Contact Me
                         </a>
+                        <a href="./Henry_Koehn_Resume_AIML.pdf" class="button ghost" download>
+                            AI/ML resume
+                        </a>
                     </div>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/henry-koehn-703395268/">
-                            <img src="./imgs/linkedin.png" alt="LinkedIn" width="48" />
+                        <a href="https://www.linkedin.com/in/henry-koehn-703395268/" aria-label="LinkedIn">
+                            <img src="./imgs/linkedin.png" alt="LinkedIn" width="36" />
+                        </a>
+                        <a href="https://github.com/henrykoehn" aria-label="GitHub">
+                            <img src="./imgs/github.png" alt="GitHub" width="36" />
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="hero-yellow">
-                <img src="./imgs/file.png" alt="Henry Koehn" width= "1080" />
+            <div class="hero-yellow reveal">
+                <img src="./imgs/file.png" alt="Henry Koehn" width="1080" />
             </div>
         </section>
+
         <section class="logos container">
-            <div class="track">
-                <img src="./imgs/html.png" alt="HTML" width="128"/>
-                <img src="./imgs/css.png" alt="CSS" width="128"/>
-                <img src="./imgs/javascript.png" alt="JavaScript" width="128"/>
-                <img src="./imgs/python.png" alt="Python" width="128"/>
-                <img src="./imgs/vscode.png" alt="VSCODE" width="128"/>
+            <div class="marquee">
+                <div class="track">
+                    <span class="pill">C#</span>
+                    <span class="pill">Java</span>
+                    <span class="pill">C++</span>
+                    <span class="pill">Python</span>
+                    <span class="pill">JavaScript</span>
+                    <span class="pill">SQL</span>
+                    <span class="pill">.NET / Blazor</span>
+                    <span class="pill">Spring Boot</span>
+                    <span class="pill">Azure</span>
+                    <span class="pill">Docker</span>
+                    <span class="pill">Jenkins</span>
+                    <span class="pill">Git / CI-CD</span>
+                    <span class="pill">C#</span>
+                    <span class="pill">Java</span>
+                    <span class="pill">C++</span>
+                    <span class="pill">Python</span>
+                    <span class="pill">JavaScript</span>
+                    <span class="pill">SQL</span>
+                    <span class="pill">.NET / Blazor</span>
+                    <span class="pill">Spring Boot</span>
+                    <span class="pill">Azure</span>
+                    <span class="pill">Docker</span>
+                    <span class="pill">Jenkins</span>
+                    <span class="pill">Git / CI-CD</span>
+                </div>
             </div>
         </section>
-        <section id = "skills" class="skills container">
+
+        <section id="skills" class="skills container">
             <h2>
                 <small>About Me</small>
-                skills
+                Skills
             </h2>
-            <div class="holder-blue">
+            <div class="holder-blue reveal">
                 <div class="left-column">
-                    <h3>Frontend</h3>
+                    <h3>Languages</h3>
                     <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
+                        <li>Java</li>
+                        <li>C#</li>
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>SQL</li>
                         <li>JavaScript</li>
                     </ul>
-                    <h3>Backend</h3>
+                    <h3>Frameworks &amp; Cloud</h3>
                     <ul>
-                        <li>Node.js</li>
-                        <li>Python</li>
+                        <li>.NET / Blazor</li>
+                        <li>Entity Framework</li>
+                        <li>Spring / Spring Boot</li>
+                        <li>Azure</li>
+                        <li>Docker</li>
+                        <li>Linux</li>
                     </ul>
+                    <h3>DevOps &amp; Automation</h3>
+                    <ul>
+                        <li>Jenkins</li>
+                        <li>Ansible</li>
+                        <li>Chef</li>
+                        <li>Git / GitHub Actions</li>
+                        <li>Dynatrace</li>
+                    </ul>
+                    <p class="also-familiar">Also familiar with: Pandas, NumPy, Scikit-Learn, Copilot Studio, Power Automate</p>
                 </div>
                 <div class="right-column">
                     <h3>A bit about me</h3>
-                    <p>Hi my name is Henry Koehn, and I am from Cedar Falls Iowa. I've always enjoyed working with computers and challenging myself. That's why I decided to choose computer science and engineering. This major allows me to combine the software aspect and the hardware aspect of computers which allows me to get a deeper understanding from both points of views.</p>
+                    <p>I'm from Cedar Falls, Iowa, and I'm pursuing a B.S.E. in Computer Science and Engineering at the University of Iowa (anticipated May 2027), aiming to land a full-time Software Engineering role. I like building and shipping production software — backend services, cloud infrastructure, and the automation that keeps systems reliable.</p>
+                    <p>I most recently interned on Mastercard's Site Reliability Engineering team supporting their API Gateway platform, and before that built features on a production accounting platform at Casey's. Outside of internships, I do some machine learning research on the side in the Sinapse Lab.</p>
                 </div>
             </div>
         </section>
-        <section id = "experience" class = "work-experience container">
+
+        <section id="experience" class="work-experience container">
             <h2>
                 <small>Recent</small>
                 Work Experience
             </h2>
-            <div class = "jobs">
-                <article>
-                    <figure></figure>
-                    <h3>Cedar Falls Community School District</h3>
-                    <div>May 2024 - August 2024</div>
-                    <p>Cedar Falls Community School District ITS Internship - Helped develop new multi-million dollar high school IT infrastructure by installing 8 network switches and over 15 UPS' for the main and intermediate distribution frames in the new building. Also helped prepare and configure over 200  student and staff devices for upcoming school year </p>
+            <div class="jobs">
+                <article class="reveal">
+                    <div class="job-header">
+                        <h3>Site Reliability Engineering Intern <span class="role-tag">Engineering</span></h3>
+                        <div class="job-meta">
+                            <span>Mastercard · O'Fallon, MO</span>
+                            <span class="date">June 2026 – August 2026</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Supported enterprise API Gateway infrastructure and built Dynatrace dashboards for real-time health monitoring across gateway environments.</li>
+                        <li>Used Jenkins, Ansible, and Chef for build automation and configuration management; coordinated daily handoffs between U.S. and India engineering teams.</li>
+                        <li>Built and shipped an internal automation tool — a Copilot-based agent integrated with Power Automate — that auto-generates Post-Incident Reports from Teams call transcripts, eliminating a manual process and getting approved for production rollout.</li>
+                    </ul>
+                </article>
+                <article class="reveal">
+                    <div class="job-header">
+                        <h3>Software Engineering Intern <span class="role-tag">Engineering</span></h3>
+                        <div class="job-meta">
+                            <span>Casey's · Ankeny, IA</span>
+                            <span class="date">May 2025 – August 2025</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Developed and maintained production accounting applications using C#, .NET, SQL, Docker, Blazor, and Azure in an Agile environment.</li>
+                        <li>Contributed to the redesign and modernization of a sales reconciliation platform for a Fortune 500 organization.</li>
+                        <li>Queried and managed relational databases with Entity Framework and SQL across multiple environments.</li>
+                    </ul>
+                </article>
+                <article class="reveal">
+                    <div class="job-header">
+                        <h3>Research Assistant — Sinapse Lab <span class="role-tag muted">Research</span></h3>
+                        <div class="job-meta">
+                            <span>University of Iowa · Iowa City, IA</span>
+                            <span class="date">February 2026 – Present</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Containerized a deep-learning tractography pipeline (CoRNN) with Docker, enabling reproducible execution across Linux research environments.</li>
+                        <li>Resolved dependency management, GPU compatibility, and multi-tool integration issues across FSL, ANTs, and MRtrix3.</li>
+                        <li>Validated workflows across multiple Linux distributions and documented deployment/troubleshooting procedures for the lab.</li>
+                    </ul>
                 </article>
             </div>
         </section>
+
+        <section id="projects" class="projects container">
+            <h2>
+                <small>What I've Built</small>
+                Projects
+            </h2>
+            <div class="project-grid">
+                <article class="reveal">
+                    <h3>Pairs Trading Backtester</h3>
+                    <p>Built a backtesting engine in C++ and Python to evaluate statistical arbitrage (pairs trading) strategies against historical market data.</p>
+                    <div class="tags">
+                        <span class="pill small">C++</span>
+                        <span class="pill small">Python</span>
+                    </div>
+                </article>
+                <article class="reveal">
+                    <h3>Machine Learning Pilot Research</h3>
+                    <p>Collaborated with University of Iowa Stead Family Children's Hospital clinicians to develop ML models predicting infant hypoglycemia. Built Python-based data preprocessing and modeling workflows with Pandas, NumPy, and Jupyter Notebooks for a pilot study on early identification of at-risk patients.</p>
+                    <div class="tags">
+                        <span class="pill small">Python</span>
+                        <span class="pill small">Pandas</span>
+                        <span class="pill small">Scikit-Learn</span>
+                        <span class="pill small">Jupyter</span>
+                    </div>
+                </article>
+            </div>
+            <div class="publication reveal">
+                <h3>Publication</h3>
+                <p><strong>Co-Author</strong> — "Machine Learning-Based Prediction of Infant Hypoglycemia." Manuscript in preparation with University of Iowa Stead Family Children's Hospital clinicians; planned submission to <em>Hospital Pediatrics</em>, September 2026.</p>
+            </div>
+        </section>
     </main>
+    <footer>
+        <div class="container footer-inner">
+            <p>&copy; <span id="year"></span> Henry Koehn</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/henry-koehn-703395268/">LinkedIn</a>
+                <a href="https://github.com/henrykoehn">GitHub</a>
+                <a href="mailto:henrykoehn1@gmail.com">Email</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
